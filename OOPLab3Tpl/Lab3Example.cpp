@@ -94,7 +94,7 @@ public:
         count++;
     }
 
-    // Конструктор копій 
+    //Конструктор копій 
     Vector(const Vector& other) {
         size = other.size;
         state = other.state;
@@ -103,7 +103,7 @@ public:
         count++;
     }
 
-    // 5. Оператор присвоєння (теж необхідно для роботи з пам'яттю) [cite: 689]
+    //Оператор присвоєння
     Vector& operator=(const Vector& other) {
         if (this == &other) return *this; 
         delete[] data; 
@@ -119,13 +119,11 @@ public:
         count--;
     }
 
-    // Функція присвоєння елементу (з перевіркою виходу за межі) [cite: 691]
     void setElement(int index, int value = 0) {
         if (index >= 0 && index < size) data[index] = value;
         else { cout << "Error: Index out of bounds!\n"; state = 1; }
     }
 
-    // Функція одержання елементу [cite: 692]
     int getElement(int index) {
         if (index >= 0 && index < size) return data[index];
         cout << "Error: Index out of bounds!\n"; 
@@ -133,7 +131,6 @@ public:
         return 0;
     }
 
-    // Друк [cite: 693]
     void print() {
         cout << "Vector (size " << size << "): [ ";
         for (int i = 0; i < size; i++) cout << data[i] << " ";
